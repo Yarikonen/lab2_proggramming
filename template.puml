@@ -1,0 +1,104 @@
+@startuml
+class pokemons.attacks.Detect {
++ <<Create>> Detect()
+# void applySelfEffects(Pokemon)
+# void applyOppEffects(Pokemon)
+# String describe()
+}
+class pokemons.attacks.TeeterDance {
++ <<Create>> TeeterDance()
+# void applyOppEffects(Pokemon)
+# String describe()
+# void applySelfEffects(Pokemon)
+
+}
+class pokemons.attacks.Scratch {
++ <<Create>> Scratch()
+}
+class pokemons.species.Staryu {
++ <<Create>> Staryu(String,int)
+}
+class pokemons.attacks.LeechSeed {
+- int k
++ <<Create>> LeechSeed()
+# String describe()
+# void applySelfEffects(Pokemon)
+# void applyOppEffects(Pokemon)
+}
+class pokemons.attacks.Move{
+}
+
+class pokemons.species.Vigoroth {
++ <<Create>> Vigoroth(String,int)
+}
+class Main {
++ {static} void main(String[])
+}
+class pokemons.species.Slaking {
++ <<Create>> Slaking(String,int)
+}
+class pokemons.species.Slakoth {
++ <<Create>> Sigilyph(String,int)
+
+}
+class pokemons.attacks.Mist {
++ <<Create>> Mist()
+# String describe()
+# void applySelfEffects(Pokemon)
+}
+class pokemons.attacks.Fly {
++ <<Create>> Fly()
+}
+class pokemons.attacks.KnockOff {
++ <<Create>> KnockOff()
+}
+class pokemons.species.Starmie {
++ <<Create>> Starmie(String,int)
+}
+class pokemons.species.Heracross {
++ <<Create>> Heracross(String,int)
+}
+class pokemons.attacks.PoisonSting {
++ <<Create>> PoisonSting()
+# void applyOppDamage(Pokemon,double)
+}
+class pokemons.attacks.HyperBeam {
+- boolean k
++ <<Create>> HyperBeam()
+# void applySelfEffects(Pokemon)
+# boolean checkAccuracy(Pokemon,Pokemon)
+}
+class pokemons.attacks.PetalDance {
++ <<Create>> PetalDance()
+# void applySelfEffects(Pokemon)
+}
+class pokemons.attacks.SeismicToss {
+- int k
++ <<Create>> SeismicToss()
+# void applyOppDamage(Pokemon,double)
+# void applySelfEffects(Pokemon)
+}
+class pokemons.attacks.DamageMove{
+}
+pokemons.attacks.DamageMove <|-- pokemons.attacks.PhysicalMove
+pokemons.attacks.DamageMove <|-- pokemons.attacks.SpecialMove
+pokemons.attacks.Move <|-- pokemons.attacks.DamageMove
+pokemons.attacks.Move <|-- pokemons.attacks.StatusMove
+pokemons.attacks.StatusMove <|-- pokemons.attacks.Detect
+pokemons.attacks.StatusMove <|-- pokemons.attacks.TeeterDance
+pokemons.attacks.PhysicalMove <|-- pokemons.attacks.Scratch
+pokemons.species.Pokemon <|-- pokemons.species.Staryu
+pokemons.attacks.StatusMove <|-- pokemons.attacks.LeechSeed
+pokemons.species.Slakoth <|-- pokemons.species.Vigoroth
+pokemons.species.Vigoroth <|-- pokemons.species.Slaking
+pokemons.species.Pokemon <|-- pokemons.species.Slakoth
+pokemons.attacks.StatusMove <|-- pokemons.attacks.Mist
+pokemons.attacks.PhysicalMove <|-- pokemons.attacks.Fly
+pokemons.attacks.PhysicalMove <|-- pokemons.attacks.KnockOff
+pokemons.species.Staryu <|-- pokemons.species.Starmie
+pokemons.species.Pokemon <|-- pokemons.species.Heracross
+pokemons.attacks.PhysicalMove <|-- pokemons.attacks.PoisonSting
+pokemons.attacks.SpecialMove <|-- pokemons.attacks.HyperBeam
+pokemons.attacks.SpecialMove <|-- pokemons.attacks.PetalDance
+pokemons.attacks.PhysicalMove <|-- pokemons.attacks.SeismicToss
+@enduml
